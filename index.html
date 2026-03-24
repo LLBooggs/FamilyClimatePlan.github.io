@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Climate Action Plan — Tulsa, Oklahoma</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:         #181c14;
+    --ink-mid:     rgba(24,28,20,0.55);
+    --ink-faint:   rgba(24,28,20,0.10);
+    --paper:       #f6f3ed;
+    --white:       #ffffff;
+    --flame:       #bf4a1a;
+    --flame-pale:  #fdf0ea;
+    --moss:        #3a6644;
+    --moss-pale:   #eaf2ec;
+    --gold:        #9c7c1e;
+    --gold-pale:   #f8f2df;
+    --sky:         #1b4f72;
+    --sky-pale:    #e8f0f8;
+    --slate:       #455a64;
+    --slate-pale:  #eceff1;
+    --amber:       #b06820;
+    --amber-pale:  #fdf3e6;
+    --plum:        #6b3a6b;
+    --plum-pale:   #f5eef8;
+    --border:      rgba(24,28,20,0.09);
+    --radius:      6px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  /* ═══ HEADER ═══ */
+  .header {
+    background: var(--ink);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0;
+  }
+  .header-main {
+    padding: 48px 56px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-main::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(58,102,68,0.25) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .eyebrow {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.42);
+    margin-bottom: 10px;
+  }
+  .header-main h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(22px, 3vw, 38px);
+    font-weight: 700;
+    line-height: 1.12;
+  }
+  .header-main h1 em {
+    font-style: italic;
+    color: #90d4a8;
+  }
+  .header-desc {
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.58);
+    max-width: 560px;
+    line-height: 1.65;
+  }
+  .header-desc + .header-desc { margin-top: 10px; }
+
+  .header-stats {
+    background: var(--moss);
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    min-width: 220px;
+  }
+  .stat { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.18); }
+  .stat:last-child { border-bottom: none; }
+  .stat-n {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+  .stat-l {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+    margin-top: 3px;
+  }
+
+  /* ═══ ALREADY DOING STRIP ═══ */
+  .already-strip {
+    background: var(--moss-pale);
+    border-bottom: 2px solid rgba(58,102,68,0.2);
+    padding: 20px 56px;
+  }
+  .already-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 12px;
+  }
+  .already-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .already-card {
+    background: var(--white);
+    border: 1px solid rgba(58,102,68,0.2);
+    border-left: 3px solid var(--moss);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 10px 14px;
+    flex: 1;
+    min-width: 220px;
+    max-width: 380px;
+  }
+  .already-name {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--moss);
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .already-check {
+    width: 18px; height: 18px;
+    background: var(--moss);
+    border-radius: 50%;
+    color: white;
+    font-size: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .already-desc {
+    font-size: 11.5px;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+  .already-impact {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--moss);
+    margin-top: 4px;
+  }
+
+  /* ═══ BUY VS RENT BAND ═══ */
+  .buyrent-band {
+    background: var(--sky-pale);
+    border-top: 2px solid rgba(27,79,114,0.15);
+    border-bottom: 2px solid rgba(27,79,114,0.15);
+    padding: 24px 56px 28px;
+    margin-top: 8px;
+  }
+  .buyrent-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 16px;
+  }
+  .buyrent-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+  }
+  .buyrent-col-head {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--sky);
+    margin-bottom: 10px;
+  }
+  .buyrent-col p {
+    font-size: 11.5px;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 9px;
+  }
+  .buyrent-col p strong { color: var(--ink); }
+  .buyrent-table {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .brt-row {
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr 1fr;
+    padding: 5px 10px;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    gap: 4px;
+    align-items: center;
+  }
+  .brt-row:last-child { border-bottom: none; }
+  .brt-head {
+    background: var(--ink);
+    color: rgba(255,255,255,0.7);
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .brt-yes { color: var(--moss); font-weight: 600; font-size: 11px; }
+  .brt-no  { color: rgba(24,28,20,0.28); font-size: 11px; }
+  @media (max-width: 860px) {
+    .buyrent-band { padding-left: 18px; padding-right: 18px; }
+    .buyrent-body { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  /* ═══ PHASE HEADERS ═══ */
+  .phase-header {
+    padding: 18px 56px 14px;
+    border-bottom: 1px solid var(--border);
+    margin-top: 28px;
+  }
+  .phase-eyebrow {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    margin-bottom: 4px;
+  }
+  .phase-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .phase-title em { font-style: italic; }
+  .phase-desc {
+    font-size: 12px;
+    color: var(--ink-mid);
+    margin-top: 6px;
+    max-width: 640px;
+    line-height: 1.6;
+  }
+  .phase-1 .phase-title { color: var(--flame); }
+  .phase-2 .phase-title { color: var(--sky); }
+
+  /* ═══ TABLE ═══ */
+  .wrap {
+    padding: 16px 56px 40px;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 4px;
+    min-width: 840px;
+  }
+  thead th {
+    padding: 7px 12px;
+    text-align: left;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    border-bottom: 2px solid var(--ink);
+    white-space: nowrap;
+  }
+
+  tbody tr { transition: box-shadow 0.13s, transform 0.13s; }
+  tbody tr:not(.sec-row):hover {
+    box-shadow: 0 3px 16px rgba(24,28,20,0.09);
+    transform: translateY(-1px);
+    position: relative;
+    z-index: 1;
+  }
+
+  td {
+    padding: 15px 12px;
+    vertical-align: top;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  td:first-child {
+    border-left: 1px solid var(--border);
+    border-radius: var(--radius) 0 0 var(--radius);
+    padding-left: 14px;
+  }
+  td:last-child {
+    border-right: 1px solid var(--border);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  /* priority circle */
+  .pri {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .p1  { background: var(--flame);  color: white; }
+  .p2  { background: var(--ink);    color: #90d4a8; }
+  .p3  { background: var(--moss);   color: white; }
+  .p4  { background: var(--sky);    color: white; }
+  .p5  { background: var(--gold);   color: white; }
+  .p6  { background: var(--amber);  color: white; }
+  .p7  { background: var(--slate);  color: white; }
+  .p8  { background: var(--plum);   color: white; }
+  .p9  { background: rgba(24,28,20,0.18); color: var(--ink); }
+  .p10 { background: rgba(24,28,20,0.14); color: var(--ink); }
+  .p11 { background: rgba(24,28,20,0.11); color: var(--ink); }
+  .p12 { background: rgba(24,28,20,0.08); color: var(--ink-mid); }
+  .p13 { background: rgba(24,28,20,0.06); color: var(--ink-mid); }
+  .p14 { background: rgba(24,28,20,0.05); color: var(--ink-mid); }
+  .p15 { background: rgba(24,28,20,0.04); color: rgba(24,28,20,0.4); }
+
+  /* solution name */
+  .sol {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .sol-sector {
+    font-size: 10px;
+    color: var(--ink-mid);
+    margin-top: 2px;
+    font-style: italic;
+  }
+  .desc { font-size: 12px; color: var(--ink-mid); max-width: 260px; line-height: 1.5; }
+  .fam-note {
+    margin-top: 7px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--flame);
+    line-height: 1.45;
+    border-left: 2px solid var(--flame);
+    padding-left: 7px;
+    max-width: 260px;
+  }
+  .phase-2 .fam-note {
+    color: var(--sky);
+    border-left-color: var(--sky);
+  }
+
+  /* impact */
+  .imp-n {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--moss);
+    line-height: 1.1;
+  }
+  .imp-s { font-size: 10.5px; color: var(--ink-mid); margin-top: 3px; line-height: 1.4; }
+  .imp-tier {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 1px 7px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .tier-vh  { background: var(--moss-pale);  color: var(--moss);  border: 1px solid #90c4a0; }
+  .tier-hi  { background: #edf7f0;           color: #357a50;      border: 1px solid #a8d8b8; }
+  .tier-mod { background: var(--amber-pale); color: var(--amber); border: 1px solid #e0b870; }
+  .tier-low { background: var(--slate-pale); color: var(--slate); border: 1px solid #b8c8d8; }
+
+  /* cost */
+  .cost-s { font-size: 12.5px; font-weight: 600; color: var(--moss); }
+  .cost-i { font-size: 12.5px; font-weight: 600; color: var(--sky); }
+  .cost-n { font-size: 12.5px; font-weight: 600; color: var(--slate); }
+  .cost-est { font-size: 11px; color: var(--ink-mid); font-style: italic; margin-top: 2px; }
+  .cost-sub { font-size: 10.5px; color: var(--ink-mid); margin-top: 3px; line-height: 1.4; }
+  sup.fn { font-size: 9px; vertical-align: super; color: var(--flame); font-weight: 700; line-height: 0; }
+
+  /* source chips */
+  .src-chips { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .sc {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1.6;
+    transition: opacity 0.12s;
+  }
+  .sc:hover { opacity: 0.78; }
+  .sc-gov   { background: #e8f0f8; color: #1b4f72; border: 1px solid #b8d0e8; }
+  .sc-sci   { background: #eaf2ec; color: #2d5c3a; border: 1px solid #b0d4b8; }
+  .sc-local { background: var(--plum-pale); color: var(--plum); border: 1px solid #c4a0c4; }
+
+  /* benefit tags */
+  .bt {
+    display: inline-block;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-size: 10px;
+    margin: 2px 2px 2px 0;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  /* phase section row */
+  .sec-row td {
+    padding: 6px 14px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  .sec-now td { background: var(--flame); color: rgba(255,255,255,0.9); }
+  .sec-buy td { background: var(--sky);   color: rgba(255,255,255,0.9); }
+
+  /* timing badges */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    line-height: 1.5;
+  }
+  .b-now  { background: var(--flame-pale); color: var(--flame); border: 1px solid rgba(191,74,26,0.3); }
+  .b-buy  { background: var(--sky-pale);   color: var(--sky);   border: 1px solid rgba(27,79,114,0.25); }
+
+  /* ═══ FOOTER ═══ */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.48);
+    padding: 28px 56px;
+    font-size: 11px;
+    line-height: 1.75;
+  }
+  footer a { color: #90d4a8; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .footer-sources {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .footer-sources-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.28);
+    margin-bottom: 8px;
+  }
+  .footer-sources-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 11px;
+    line-height: 1.9;
+  }
+  .footnotes {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .footnotes h4 {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.28);
+    margin-bottom: 10px;
+  }
+  .fn-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .fn-list li { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.55; display: flex; gap: 8px; }
+  .fn-list li .fn-num { font-weight: 700; color: #90d4a8; flex-shrink: 0; min-width: 14px; }
+
+  @media (max-width: 860px) {
+    .header { grid-template-columns: 1fr; }
+    .header-stats { display: none; }
+    .header-main, .already-strip, .phase-header, .wrap, footer { padding-left: 18px; padding-right: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-main">
+    <div class="eyebrow">Family Climate Action Plan · Tulsa, Oklahoma · 2026</div>
+    <h1>Your Household<br><em>Climate Action Priorities</em></h1>
+    <p class="header-desc">You're already doing more than most families — a vegan diet eliminates the single largest household carbon lever, full stop. This plan ranks the remaining high-impact actions by climate impact and feasibility for your specific situation: one gas car, daily driving to daycare and work, renting now with a home purchase on the horizon.</p>
+    <p class="header-desc">Six actions are available right now as renters. Nine more unlock when you buy a home — and the decisions you make in that first year will shape your household's emissions for decades. Owning roughly doubles your actionable climate impact over a 5–10 year horizon. Most actions either save money or pay for themselves.</p>
+  </div>
+  <div class="header-stats">
+    <div class="stat"><div class="stat-n">2 + 1</div><div class="stat-l">Adults + infant</div></div>
+    <div class="stat"><div class="stat-n">Tulsa</div><div class="stat-l">Hot-dominant · 220+ sunny days</div></div>
+    <div class="stat"><div class="stat-n">~40%</div><div class="stat-l">Oklahoma grid · fossil fuel</div></div>
+    <div class="stat"><div class="stat-n">15</div><div class="stat-l">Action items below</div></div>
+  </div>
+</div>
+
+<!-- ALREADY DOING STRIP -->
+<div class="already-strip">
+  <div class="already-eyebrow">✓ &nbsp; You're Already Here — Two of Drawdown's Highest-Impact Solutions</div>
+  <div class="already-grid">
+    <div class="already-card">
+      <div class="already-name">
+        <div class="already-check">✓</div>
+        Plant-Rich / Vegan Diet
+      </div>
+      <div class="already-desc">Shifting away from animal products — especially beef — is Project Drawdown's single highest-impact climate solution. You've already addressed this entirely.</div>
+      <div class="already-impact">≈ 1.40–2.80 Gt CO₂-eq/yr globally · Largest single solution in the database</div>
+    </div>
+    <div class="already-card">
+      <div class="already-name">
+        <div class="already-check">✓</div>
+        Low Consumption Mindset
+      </div>
+      <div class="already-desc">The "reduce" in reduce-reuse-recycle is the most impactful step. Buying less, buying used, and choosing durable goods avoids the embedded carbon in manufacturing.</div>
+      <div class="already-impact">Drawdown: Reduced Consumption — moderate-to-high impact with immediate savings</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 1 HEADER -->
+<div class="phase-header phase-1">
+  <div class="phase-eyebrow">Phase 1</div>
+  <div class="phase-title">Act Now — <em>Renter-Friendly Actions</em></div>
+  <div class="phase-desc">Six high-impact actions you can take today without owning a home. Ordered by climate impact. Your biggest remaining lever is the one gas car — transportation now dominates your household's footprint.</div>
+</div>
+
+<!-- PHASE 1 TABLE -->
+<div class="wrap phase-1">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Solution</th>
+      <th>Timing</th>
+      <th>What It Means for Your Family</th>
+      <th>Climate Impact</th>
+      <th>Cost / Savings</th>
+      <th>Key Benefits</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <!-- 1. Electric Vehicle -->
+  <tr>
+    <td><div class="pri p1">1</div></td>
+    <td>
+      <div class="sol">Switch to an Electric Vehicle</div>
+      <div class="sol-sector">Transportation</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/electric-cars" target="_blank">Drawdown</a>
+        <a class="sc sc-sci" href="https://www.ipcc.ch/report/ar6/wg3/chapter/summary-for-policymakers/" target="_blank">IPCC AR6 SPM</a>
+        <a class="sc sc-gov" href="https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=49374" target="_blank">DOE FuelEconomy</a>
+        <a class="sc sc-gov" href="https://www.irs.gov/credits-deductions/credits-for-new-clean-vehicles-purchased-in-2023-or-after" target="_blank">IRS 30D Credit</a>
+      </div>
+    </td>
+    <td><span class="badge b-now">▶ Act Now</span></td>
+    <td>
+      <div class="desc">Replace your gas car with an EV at next purchase. Daily daycare and work commuting is exactly the use pattern EVs optimize for — predictable short-to-medium trips, charged overnight at home.</div>
+      <div class="fam-note">Your gas car is now your household's largest remaining carbon source. An EV on Oklahoma's grid (~40% fossil) cuts per-mile emissions ~55% today — and improves every year as the grid cleans up. The $7,500 federal 30D tax credit applies to new qualifying EVs; point-of-sale credit available since Jan 2024. Check Oklahoma's PSO EV rate tariff for off-peak charging savings.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-vh">Very High</div>
+      <div class="imp-n">~55% per-mile CO₂ reduction now</div>
+      <div class="imp-s">On OK's ~40% fossil grid; improves as grid decarbonizes</div>
+      <div class="imp-s">Drawdown: Electric Cars — 0.65–1.28 Gt/yr globally at scale</div>
+    </td>
+    <td>
+      <div class="cost-s">Net savings long-term</div>
+      <div class="cost-est">$7,500 federal 30D tax credit (new EVs)<sup class="fn">1</sup></div>
+      <div class="cost-sub">Fuel + maintenance savings ~$1,500–2,500/yr. Point-of-sale credit available since Jan 2024. Used EVs qualify for $4,000 credit (30D used).</div>
+    </td>
+    <td><span class="bt">Fuel savings</span><span class="bt">Air quality</span><span class="bt">Quieter</span><span class="bt">Grid-ready</span></td>
+  </tr>
+
+  <!-- 2. E-Bike -->
+  <tr>
+    <td><div class="pri p2">2</div></td>
+    <td>
+      <div class="sol">Add an E-Bike to Replace Car Trips</div>
+      <div class="sol-sector">Transportation</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/electric-bicycles" target="_blank">Drawdown</a>
+        <a class="sc sc-sci" href="https://www.ipcc.ch/report/ar6/wg3/chapter/summary-for-policymakers/" target="_blank">IPCC AR6 SPM</a>
+      </div>
+    </td>
+    <td><span class="badge b-now">▶ Act Now</span></td>
+    <td>
+      <div class="desc">Right now, most short-to-medium trips happen by car. A cargo e-bike can carry a child seat and groceries, directly replacing daily car trips to daycare and errands — at a fraction of the emissions and cost per trip.</div>
+      <div class="fam-note">Drawdown ranks electric bicycles at −$1,748 per ton CO₂-eq — one of the most cost-effective solutions in the entire database. Tulsa's relatively flat terrain and mild fall/spring seasons make this viable even for workweek trips. A cargo e-bike used 3 days/week for daycare pickup eliminates 150+ car trips per year. The key barrier is habit, not hardware — starting with one trip type (e.g., daycare pickup on mild days) and expanding from there is the proven approach.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-hi">High</div>
+      <div class="imp-n">−$1,748/t CO₂-eq</div>
+      <div class="imp-s">Drawdown: Electric Bicycles — one of highest cost-effectiveness scores in database</div>
+      <div class="imp-s">Each avoided car trip to daycare ≈ 0.5–1 lb CO₂ not emitted</div>
+    </td>
+    <td>
+      <div class="cost-i">Moderate investment</div>
+      <div class="cost-est">$1,500–4,000 (cargo e-bike)</div>
+      <div class="cost-sub">No federal e-bike credit currently. Some states offer rebates — Oklahoma does not as of 2026. Payback via avoided gas + parking in 2–4 yrs.</div>
+    </td>
+    <td><span class="bt">Replaces car trips</span><span class="bt">Child transport</span><span class="bt">Health</span><span class="bt">Fun</span></td>
+  </tr>
+
+  <!-- 3. Green Electricity -->
+  <tr>
+    <td><div class="pri p3">3</div></td>
+    <td>
+      <div class="sol">Enroll in Green Electricity</div>
+      <div class="sol-sector">Electricity</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/distributed-solar-pv" target="_blank">Drawdown</a>
+        <a class="sc sc-local" href="https://www.psoklahoma.com/account/billing/green-country-energy/" target="_blank">PSO Green Country</a>
+        <a class="sc sc-gov" href="https://www.energy.gov/eere/electricity/green-power-markets" target="_blank">DOE Green Power</a>
+      </div>
+    </td>
+    <td><span class="badge b-now">▶ Act Now</span></td>
+    <td>
+      <div class="desc">PSO (Public Service Company of Oklahoma) offers Green Country Energy — a renewable energy option that supports wind and solar generation on the Oklahoma grid. As a renter, this is the most immediate way to address your home's electricity emissions.</div>
+      <div class="fam-note">Takes about 10 minutes online. Oklahoma's grid is ~60% wind and natural gas — enrolling in a green power program directs your bill toward wind generation and sends a market signal. When you buy an EV, home charging on a green tariff brings per-mile emissions close to zero. This is the highest-leverage single-click action available to you right now.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-hi">High</div>
+      <div class="imp-n">~40–60% home electricity emissions eliminated</div>
+      <div class="imp-s">Oklahoma grid mix ~40% fossil; green enrollment addresses your Scope 2 footprint immediately</div>
+    </td>
+    <td>
+      <div class="cost-s">Low premium</div>
+      <div class="cost-est">~$5–15/month added to bill</div>
+      <div class="cost-sub">PSO Green Country Energy: contact PSO or check psoklahoma.com. RECs (Renewable Energy Certificates) track the clean energy you're supporting.</div>
+    </td>
+    <td><span class="bt">Immediate impact</span><span class="bt">Grid signal</span><span class="bt">EV synergy</span></td>
+  </tr>
+
+  <!-- 4. Food Waste + Composting -->
+  <tr>
+    <td><div class="pri p4">4</div></td>
+    <td>
+      <div class="sol">Reduce Food Waste &amp; Compost</div>
+      <div class="sol-sector">Food, Agriculture &amp; Land</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/food-loss-and-waste" target="_blank">Drawdown</a>
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/centralized-composting" target="_blank">Drawdown Composting</a>
+        <a class="sc sc-sci" href="https://flwprotocol.org/" target="_blank">WRI FLW Protocol</a>
+        <a class="sc sc-local" href="https://www.cityoftulsa.org/government/departments/public-works/recycling-solid-waste/composting/" target="_blank">City of Tulsa</a>
+      </div>
+    </td>
+    <td><span class="badge b-now">▶ Act Now</span></td>
+    <td>
+      <div class="desc">Even on a vegan diet, food that ends up in a landfill produces methane — a greenhouse gas 80× more potent than CO₂ over 20 years. Reducing waste and composting organic material is one of Drawdown's top solutions.</div>
+      <div class="fam-note">City of Tulsa offers curbside organics composting on select routes — check your address at cityoftulsa.org. For non-covered areas, private services like Tulsa Composts offer residential pickup. A countertop compost bin and a weekly habit of meal planning to reduce waste are free. Great activity to model for a growing child.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-vh">Very High</div>
+      <div class="imp-n">0.78–1.20 Gt/yr composting globally</div>
+      <div class="imp-s">Food Loss &amp; Waste: 1.23–2.47 Gt/yr — methane from landfilled food is a major emission source even on a plant-based diet</div>
+    </td>
+    <td>
+      <div class="cost-s">Saves money</div>
+      <div class="cost-est">$0–30/month composting pickup</div>
+      <div class="cost-sub">Less food waste = lower grocery bill. Countertop bin ~$20–40. City curbside often free with waste service.</div>
+    </td>
+    <td><span class="bt">Waste diversion</span><span class="bt">Grocery savings</span><span class="bt">Methane ↓</span><span class="bt">Kid-friendly</span></td>
+  </tr>
+
+  <!-- 5. Vote & Advocate -->
+  <tr>
+    <td><div class="pri p5">5</div></td>
+    <td>
+      <div class="sol">Vote &amp; Advocate on Climate Policy</div>
+      <div class="sol-sector">Governance &amp; Policy</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/improve-governance" target="_blank">Drawdown: Governance</a>
+        <a class="sc sc-sci" href="https://www.ipcc.ch/report/ar6/wg3/chapter/summary-for-policymakers/" target="_blank">IPCC AR6 SPM</a>
+        <a class="sc sc-local" href="https://www.tulsaclimateaction.com/" target="_blank">Tulsa Climate Action</a>
+      </div>
+    </td>
+    <td><span class="badge b-now">▶ Act Now</span></td>
+    <td>
+      <div class="desc">Project Drawdown identifies governance, health, and education as critical cross-cutting enablers. Individual actions matter — but systemic policy change at the city, state, and utility level has orders-of-magnitude larger impact.</div>
+      <div class="fam-note">Tulsa City Council votes on building codes, urban forestry budgets, and the city's own climate action plan. PSO rate cases before the Oklahoma Corporation Commission determine whether clean energy is affordable for all Tulsans. Oklahoma legislative races shape renewable energy standards. Showing up — in elections, in public comment periods, in community groups — multiplies your household's impact by the scale of the system you influence. Tulsa Climate Action Coalition (tulsaclimateaction.com) tracks local opportunities.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-vh">Very High (systemic)</div>
+      <div class="imp-n">Policy change = multiplied household impact</div>
+      <div class="imp-s">IPCC AR6 SPM: "rapid and deep emissions reductions require systemic change" — individual action is necessary but not sufficient</div>
+    </td>
+    <td>
+      <div class="cost-s">Free</div>
+      <div class="cost-sub">Time investment only. Most impactful: local elections, utility commission comments, state legislature, school board.</div>
+    </td>
+    <td><span class="bt">Systemic change</span><span class="bt">Community</span><span class="bt">Future-oriented</span></td>
+  </tr>
+
+  <!-- 6. Low-Flow Fixtures -->
+  <tr>
+    <td><div class="pri p6">6</div></td>
+    <td>
+      <div class="sol">Install Low-Flow Fixtures</div>
+      <div class="sol-sector">Buildings &amp; Water</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/use-low-flow-fixtures" target="_blank">Drawdown</a>
+        <a class="sc sc-gov" href="https://www.energystar.gov/products/water_heaters" target="_blank">EPA ENERGY STAR</a>
+        <a class="sc sc-gov" href="https://www.energy.gov/eere/buildings/building-technologies-office" target="_blank">DOE BTO</a>
+      </div>
+    </td>
+    <td><span class="badge b-now">▶ Act Now</span></td>
+    <td>
+      <div class="desc">Low-flow showerheads and faucet aerators reduce hot water use — cutting both water bills and the energy required to heat that water. DIY-installable in most rentals (the landlord often appreciates the upgrade).</div>
+      <div class="fam-note">With a baby in the house, bathing frequency is high. Low-flow showerheads (WaterSense certified, ≤2.0 gpm) cut shower water use 20–30% without noticeable pressure change. Ask your landlord — many will allow or even reimburse this. Takes 15 minutes. Tulsa Water utility occasionally offers rebates on water-efficient fixtures; check tulsawater.org. Check if your current showerhead exceeds 2.5 gpm by timing a bucket fill.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-mod">Moderate</div>
+      <div class="imp-n">20–30% hot water energy reduction</div>
+      <div class="imp-s">Drawdown: Low-Flow Fixtures — reduces water heating (buildings' #2 energy end use after HVAC)</div>
+    </td>
+    <td>
+      <div class="cost-s">Saves money</div>
+      <div class="cost-est">$10–30 per fixture</div>
+      <div class="cost-sub">Immediate water + utility savings. WaterSense certified fixtures available at any hardware store. Payback in weeks.</div>
+    </td>
+    <td><span class="bt">Water savings</span><span class="bt">Lower utility bills</span><span class="bt">DIY</span></td>
+  </tr>
+
+  </tbody>
+</table>
+</div>
+
+<!-- BUY VS RENT BRIDGE -->
+<div class="buyrent-band">
+  <div class="buyrent-eyebrow">🏠 &nbsp; Does Buying a Home Change the Climate Math?</div>
+  <div class="buyrent-body">
+    <div class="buyrent-col">
+      <div class="buyrent-col-head">What renting limits</div>
+      <p>As a renter you can act on 6 of the 15 items in this plan. The 9 homeowner actions are locked — you can't specify the HVAC system, add insulation, install solar, or plant trees. And those 9 actions include some of the highest-impact, longest-duration levers available to a household.</p>
+      <p>The most consequential: specifying a <strong>heat pump</strong> at HVAC replacement. That single decision eliminates combustion from your home and locks in decarbonization for 15–20 years. Missing the replacement window means 15–20 more years of unnecessary emissions from equipment you didn't choose.</p>
+    </div>
+    <div class="buyrent-col">
+      <div class="buyrent-col-head">What buying unlocks</div>
+      <div class="buyrent-table">
+        <div class="brt-row brt-head"><span>Action</span><span>Renter</span><span>Owner</span></div>
+        <div class="brt-row"><span>EV + e-bike</span><span class="brt-yes">✓ now</span><span class="brt-yes">✓ now</span></div>
+        <div class="brt-row"><span>Green electricity</span><span class="brt-yes">✓ now</span><span class="brt-yes">✓ now</span></div>
+        <div class="brt-row"><span>Food waste / compost</span><span class="brt-yes">✓ now</span><span class="brt-yes">✓ now</span></div>
+        <div class="brt-row"><span>Heat pump HVAC</span><span class="brt-no">✗</span><span class="brt-yes">✓ ~3–4 t CO₂/yr</span></div>
+        <div class="brt-row"><span>Rooftop solar</span><span class="brt-no">✗</span><span class="brt-yes">✓ 30% IRA credit</span></div>
+        <div class="brt-row"><span>Building envelope</span><span class="brt-no">✗</span><span class="brt-yes">✓ IRA 25C</span></div>
+        <div class="brt-row"><span>Heat pump water heater</span><span class="brt-no">✗</span><span class="brt-yes">✓ IRA 25C</span></div>
+        <div class="brt-row"><span>Windows, trees, cool roof</span><span class="brt-no">✗</span><span class="brt-yes">✓</span></div>
+      </div>
+    </div>
+    <div class="buyrent-col">
+      <div class="buyrent-col-head">The nuance</div>
+      <p><strong>Your EV purchase is still your biggest immediate lever</strong> — and it's fully available right now as a renter. Don't wait.</p>
+      <p><strong>Most homeowner actions trigger at equipment end-of-life.</strong> Buying a home with mid-life HVAC means waiting for the replacement window before acting on the most impactful items. The climate case for buying is strongest if the home has aging systems you can replace soon.</p>
+      <p><strong>What you buy matters as much as whether you buy.</strong> A well-insulated newer rental may have a lower footprint than an old drafty house you own. Target homes with aging HVAC, a solar-ready roof, and south/west exposure for trees — so Phase 2 is actionable within 2–3 years of purchase.</p>
+      <p><strong>The IRA residential credits are real and available now</strong> — 25C (heat pumps, insulation, windows), 25D (solar), 30D (EV) — and they make the homeowner actions more financially accessible than at any prior point in history.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 2 HEADER -->
+<div class="phase-header phase-2">
+  <div class="phase-eyebrow">Phase 2</div>
+  <div class="phase-title">When You Buy — <em>Homeowner Upgrades</em></div>
+  <div class="phase-desc">The decisions made in your first year of homeownership will shape your household's energy profile and emissions for the next 20+ years. The most important window: specifying the right HVAC system when the existing equipment is replaced. Ordered by priority — do envelope work before HVAC, and efficiency upgrades before solar.</div>
+</div>
+
+<!-- PHASE 2 TABLE -->
+<div class="wrap phase-2">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Solution</th>
+      <th>Timing</th>
+      <th>What It Means for Your Family</th>
+      <th>Climate Impact</th>
+      <th>Cost / Savings</th>
+      <th>Key Benefits</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <!-- 7. Refrigerant Management -->
+  <tr>
+    <td><div class="pri p7">7</div></td>
+    <td>
+      <div class="sol">Refrigerant Management</div>
+      <div class="sol-sector">Buildings &amp; Industry</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/improve-refrigerant-management" target="_blank">Drawdown</a>
+        <a class="sc sc-sci" href="https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-9/" target="_blank">IPCC AR6 Ch.9</a>
+        <a class="sc sc-gov" href="https://www.epa.gov/section608" target="_blank">EPA §608</a>
+      </div>
+    </td>
+    <td><span class="badge b-buy">◌ When You Buy</span></td>
+    <td>
+      <div class="desc">HFC refrigerants are up to 9,000× more potent than CO₂. Older HVAC systems leak — sometimes significantly. Inspect at purchase; require EPA §608-compliant recovery at any HVAC decommission.</div>
+      <div class="fam-note">Make a home inspection HVAC refrigerant audit a non-negotiable. If you inherit aging equipment, schedule an HVAC service call in year one to check for leaks and have them corrected. When any system is eventually replaced, require the contractor to document EPA §608 refrigerant recovery — this is both legally required and the fastest, cheapest per-ton climate action available to you as a homeowner. Don't skip this because it's invisible.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-vh">Very High</div>
+      <div class="imp-n">0.43–0.89 Gt/yr globally</div>
+      <div class="imp-s">Highest cost-effectiveness of any climate action per Drawdown — HFCs are 9,000× more potent than CO₂ per molecule</div>
+    </td>
+    <td>
+      <div class="cost-s">Saves money</div>
+      <div class="cost-est">$150–400 for inspection + leak repair</div>
+      <div class="cost-sub">Also improves HVAC efficiency and lowers utility bills. Require §608 documentation at decommission — no added cost, just paperwork.</div>
+    </td>
+    <td><span class="bt">HVAC efficiency</span><span class="bt">Legal compliance</span><span class="bt">Air quality</span></td>
+  </tr>
+
+  <!-- 8. Building Envelope -->
+  <tr>
+    <td><div class="pri p8">8</div></td>
+    <td>
+      <div class="sol">Improve Building Envelope First</div>
+      <div class="sol-sector">Buildings &amp; Electricity</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/improve-building-envelopes" target="_blank">Drawdown</a>
+        <a class="sc sc-sci" href="https://rmi.org/insight/economics-of-electrifying-buildings-medium-size-commercial-retrofits/" target="_blank">RMI</a>
+        <a class="sc sc-gov" href="https://www.energy.gov/eere/buildings/building-technologies-office" target="_blank">DOE BTO</a>
+        <a class="sc sc-gov" href="https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit" target="_blank">IRS 25C</a>
+      </div>
+    </td>
+    <td><span class="badge b-buy">◌ When You Buy</span></td>
+    <td>
+      <div class="desc">Insulation and air-sealing reduce how much heating and cooling your home requires. Do this before replacing the HVAC system — it determines the correct size of the new equipment and can cut equipment cost 20–30%.</div>
+      <div class="fam-note">Commission a home energy audit in your first month. In Tulsa's hot-dominant climate, the attic and the building shell are where most cooling escapes. A well-sealed, well-insulated home is also healthier — fewer allergens, better indoor air quality for your infant. IRA 25C credit: up to $1,200/yr for insulation and air-sealing. Use low-embodied-carbon insulation (cellulose or mineral wool) where possible — both perform better in humid climates than fiberglass batts.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-hi">High</div>
+      <div class="imp-n">20–40% HVAC load reduction</div>
+      <div class="imp-s">Do before HVAC replacement — reduces equipment sizing by 20–30%; WRI: every $1 on efficiency avoids $2+ in energy infrastructure</div>
+    </td>
+    <td>
+      <div class="cost-s">Net savings</div>
+      <div class="cost-est">$1,500–8,000 typical home</div>
+      <div class="cost-sub">IRA 25C credit: up to $1,200/yr for insulation + air sealing.<sup class="fn">2</sup> PACE financing available in Oklahoma. PSO/ONG may offer energy audit rebates.</div>
+    </td>
+    <td><span class="bt">Comfort</span><span class="bt">Indoor air quality</span><span class="bt">HVAC rightsizing</span><span class="bt">Allergens ↓</span></td>
+  </tr>
+
+  <!-- 9. Heat Pump HVAC -->
+  <tr>
+    <td><div class="pri p9">9</div></td>
+    <td>
+      <div class="sol">Specify Heat Pump HVAC</div>
+      <div class="sol-sector">Buildings &amp; Electricity</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/use-heat-pumps" target="_blank">Drawdown</a>
+        <a class="sc sc-sci" href="https://rmi.org/insight/economics-of-electrifying-buildings-medium-size-commercial-retrofits/" target="_blank">RMI</a>
+        <a class="sc sc-sci" href="https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-9/" target="_blank">IPCC AR6 Ch.9</a>
+        <a class="sc sc-gov" href="https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit" target="_blank">IRS 25C</a>
+        <a class="sc sc-gov" href="https://www.energy.gov/eere/buildings/building-technologies-office" target="_blank">DOE BTO</a>
+      </div>
+    </td>
+    <td><span class="badge b-buy">◌ When You Buy</span></td>
+    <td>
+      <div class="desc">When the HVAC system needs replacement, specify all-electric heat pumps rather than gas equipment. Heat pumps provide both heating and cooling at 3× the efficiency of resistance heating. Missing this window means 15–20 years of unnecessary emissions.</div>
+      <div class="fam-note">This is the most important climate decision available to you as a new homeowner. Tulsa's mild winters make heat pumps especially well-suited — cold-climate heat pumps (operating efficiently to 5°F) handle occasional Oklahoma cold snaps easily. No gas combustion in the home also means better indoor air quality for your family — gas appliances are linked to asthma in children (IPCC AR6). Get heat pump bids alongside conventional bids. IRA 25C credit: up to $2,000/yr for qualifying heat pumps. Also consider a heat pump water heater simultaneously — IRA 25C covers that too, and it's the most efficient domestic water heater available.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-vh">Very High</div>
+      <div class="imp-n">0.57–0.91 Gt/yr globally</div>
+      <div class="imp-s">Eliminates combustion from your home; ~3–4 tons CO₂/yr eliminated; improves every year as Oklahoma's grid decarbonizes</div>
+    </td>
+    <td>
+      <div class="cost-s">Net savings</div>
+      <div class="cost-est">$5,000–15,000 installed (residential)</div>
+      <div class="cost-sub">IRA 25C: up to $2,000/yr for heat pumps.<sup class="fn">2</sup> Heat pump water heater: up to $2,000/yr separately. Long-term savings via lower utility bills + no gas service.</div>
+    </td>
+    <td><span class="bt">No combustion</span><span class="bt">Heating + cooling</span><span class="bt">Child air quality</span><span class="bt">Grid-ready</span></td>
+  </tr>
+
+  <!-- 10. LED Lighting -->
+  <tr>
+    <td><div class="pri p10">10</div></td>
+    <td>
+      <div class="sol">LED Lighting Throughout</div>
+      <div class="sol-sector">Electricity</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/led-lighting" target="_blank">Drawdown</a>
+        <a class="sc sc-gov" href="https://www.energystar.gov/products/lighting_fans" target="_blank">EPA ENERGY STAR</a>
+        <a class="sc sc-gov" href="https://www.energy.gov/eere/buildings/building-technologies-office" target="_blank">DOE BTO</a>
+      </div>
+    </td>
+    <td><span class="badge b-buy">◌ When You Buy</span></td>
+    <td>
+      <div class="desc">Replace all incandescent and fluorescent fixtures with LED. Cuts lighting electricity use 50–75%. One of the highest-confidence, fastest-payback upgrades in the Drawdown database.</div>
+      <div class="fam-note">Do this immediately when you move in — it's cheap, easy, and the most natural moment to do a whole-house swap. Older Tulsa homes often still have fluorescent tube fixtures, recessed incandescent cans, and exterior halogen floods. LED equivalent bulbs for all of these are under $5 each. In a house with a young child, LEDs also run cooler — important near nursery fixtures. Target dimmable LEDs for living areas; 2700K color temperature for warmth. No federal credit for residential LEDs directly, but the savings fund other upgrades.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-vh">Very High</div>
+      <div class="imp-n">50–75% lighting electricity reduction</div>
+      <div class="imp-s">Drawdown: LED Lighting — 0.62–0.65 Gt/yr globally; 2–4 yr payback in a typical home</div>
+    </td>
+    <td>
+      <div class="cost-s">Net savings</div>
+      <div class="cost-est">$100–400 whole-house swap</div>
+      <div class="cost-sub">2–4 yr payback. No credit needed — pure ROI. Buy in bulk from a hardware store when you move in.</div>
+    </td>
+    <td><span class="bt">Immediate savings</span><span class="bt">Runs cooler</span><span class="bt">Low maintenance</span></td>
+  </tr>
+
+  <!-- 11. Smart Thermostat -->
+  <tr>
+    <td><div class="pri p11">11</div></td>
+    <td>
+      <div class="sol">Smart Thermostat</div>
+      <div class="sol-sector">Buildings &amp; Electricity</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/automate-building-systems" target="_blank">Drawdown</a>
+        <a class="sc sc-gov" href="https://www.energystar.gov/products/heating_cooling/smart_thermostats" target="_blank">EPA ENERGY STAR</a>
+        <a class="sc sc-gov" href="https://betterbuildingssolutioncenter.energy.gov/" target="_blank">DOE Better Buildings</a>
+      </div>
+    </td>
+    <td><span class="badge b-buy">◌ When You Buy</span></td>
+    <td>
+      <div class="desc">A smart thermostat (Nest, Ecobee, or similar) learns your schedule and optimizes HVAC runtime automatically. Saves 10–15% on heating and cooling, with no behavior change required after setup.</div>
+      <div class="fam-note">DIY install in 30 minutes. In Tulsa's hot summers, pre-cooling before you arrive home (while on cheaper off-peak rates) and letting temperatures float while you're out cuts cooling costs significantly. PSO sometimes offers a $50–75 rebate on qualifying smart thermostats — check psoklahoma.com. With a young child, you'll appreciate consistent temperatures; the smart thermostat handles that while also saving energy. ENERGY STAR certified models required for rebates.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-hi">High</div>
+      <div class="imp-n">10–15% HVAC energy reduction</div>
+      <div class="imp-s">Drawdown: Automate Building Systems — connects with EV charging, time-of-use rates, and future home battery</div>
+    </td>
+    <td>
+      <div class="cost-s">Net savings</div>
+      <div class="cost-est">$150–250 installed</div>
+      <div class="cost-sub">PSO rebate ~$50–75 for ENERGY STAR models. 1–2 yr payback. DIY installable.</div>
+    </td>
+    <td><span class="bt">Comfort</span><span class="bt">Utility savings</span><span class="bt">Automatable</span></td>
+  </tr>
+
+  <!-- 12. Solar PV -->
+  <tr>
+    <td><div class="pri p12">12</div></td>
+    <td>
+      <div class="sol">Rooftop Solar PV</div>
+      <div class="sol-sector">Electricity</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/distributed-solar-pv" target="_blank">Drawdown</a>
+        <a class="sc sc-gov" href="https://pvwatts.nrel.gov/" target="_blank">NREL PVWatts</a>
+        <a class="sc sc-gov" href="https://www.irs.gov/credits-deductions/residential-clean-energy-credit" target="_blank">IRS 25D Credit</a>
+        <a class="sc sc-sci" href="https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-9/" target="_blank">IPCC AR6 Ch.9</a>
+      </div>
+    </td>
+    <td><span class="badge b-buy">◌ When You Buy</span></td>
+    <td>
+      <div class="desc">Rooftop solar generates clean electricity on-site, offsetting grid power. Tulsa receives ~5.5 peak sun hours/day — one of the best solar resources in the country. Install after envelope and LED upgrades to rightsize the array.</div>
+      <div class="fam-note">The IRA Sec. 25D residential clean energy credit is 30% of total installed cost — no construction deadline as of 2026 (unlike the nonprofit version). A 7–10 kW system on a typical Tulsa home costs ~$18,000–28,000 installed before the credit, bringing net cost to ~$12,600–19,600. NREL PVWatts (pvwatts.nrel.gov) gives a free estimate for any address in Tulsa. If you add an EV and a heat pump, you'll likely want a larger array — size for your projected total load. Also explore PSO's net metering policy before signing a contract, as net metering terms affect ROI significantly.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-hi">High</div>
+      <div class="imp-n">30–80% of home electricity offset</div>
+      <div class="imp-s">Drawdown: Distributed Solar PV — ~5.5 peak sun hrs/day in Tulsa; 25–30 yr panel life; value grows as grid decarbonizes</div>
+    </td>
+    <td>
+      <div class="cost-s">Net savings long-term</div>
+      <div class="cost-est">$18,000–28,000 → ~$12,600–19,600 after 30% IRA 25D credit</div>
+      <div class="cost-sub">IRA Sec. 25D: 30% residential tax credit, no current sunset deadline.<sup class="fn">2</sup> 8–12 yr payback in Oklahoma. ~25–30 yr panel life. Verify PSO net metering policy.</div>
+    </td>
+    <td><span class="bt">Energy independence</span><span class="bt">EV synergy</span><span class="bt">Grid resilience</span><span class="bt">Long-term savings</span></td>
+  </tr>
+
+  <!-- 13. Solar Hot Water / Heat Pump Water Heater -->
+  <tr>
+    <td><div class="pri p13">13</div></td>
+    <td>
+      <div class="sol">Heat Pump Water Heater</div>
+      <div class="sol-sector">Buildings</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/deploy-solar-hot-water" target="_blank">Drawdown</a>
+        <a class="sc sc-gov" href="https://www.energystar.gov/products/water_heaters" target="_blank">EPA ENERGY STAR</a>
+        <a class="sc sc-gov" href="https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit" target="_blank">IRS 25C</a>
+        <a class="sc sc-gov" href="https://www.energy.gov/eere/buildings/building-technologies-office" target="_blank">DOE BTO</a>
+      </div>
+    </td>
+    <td><span class="badge b-buy">◌ When You Buy</span></td>
+    <td>
+      <div class="desc">A heat pump water heater (HPWH) is 3–4× more efficient than a standard electric water heater, and eliminates gas combustion. Water heating is a home's #2 energy use after HVAC. With a young child, hot water demand is high.</div>
+      <div class="fam-note">When your water heater needs replacement (or at purchase if replacing gas), an HPWH like a Rheem ProTerra or AO Smith HPTU is the right choice. In Tulsa's climate, the heat pump cycle is efficient year-round. IRA 25C credit: up to $2,000/yr for heat pump water heaters — this is separate from the HVAC heat pump credit, so you can claim both in the same year. A 50-gallon HPWH costs ~$1,000–1,400 before credit, bringing net cost to ~$600–1,000. Payback vs. gas: 3–5 years.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-hi">High</div>
+      <div class="imp-n">~70% water heating energy reduction vs. resistance</div>
+      <div class="imp-s">Drawdown: Solar Hot Water / efficient water heating — water heating is buildings' #2 energy end use after HVAC; HPWH is the most efficient electric option</div>
+    </td>
+    <td>
+      <div class="cost-s">Net savings</div>
+      <div class="cost-est">~$600–1,000 net after IRA 25C credit</div>
+      <div class="cost-sub">IRA 25C: up to $2,000/yr for qualifying HPWHs.<sup class="fn">2</sup> Stackable with HVAC heat pump credit in same year. 3–5 yr payback vs. gas water heater.</div>
+    </td>
+    <td><span class="bt">No combustion</span><span class="bt">Energy savings</span><span class="bt">IRA credit stackable</span></td>
+  </tr>
+
+  <!-- 14. Windows -->
+  <tr>
+    <td><div class="pri p14">14</div></td>
+    <td>
+      <div class="sol">Efficient Windows &amp; Glass</div>
+      <div class="sol-sector">Buildings &amp; Electricity</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/improve-windows-glass" target="_blank">Drawdown</a>
+        <a class="sc sc-gov" href="https://www.ashrae.org/technical-resources/bookstore/standard-90-1" target="_blank">ASHRAE 90.1</a>
+        <a class="sc sc-gov" href="https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit" target="_blank">IRS 25C</a>
+        <a class="sc sc-gov" href="https://www.energy.gov/eere/buildings/building-technologies-office" target="_blank">DOE BTO</a>
+      </div>
+    </td>
+    <td><span class="badge b-buy">◌ When You Buy</span></td>
+    <td>
+      <div class="desc">Low-e double-pane windows reduce solar heat gain and air leakage. Windows drive 30–50% of heating and cooling loads. Especially impactful on south- and west-facing glass in Tulsa's intense summer sun.</div>
+      <div class="fam-note">Replace at natural end-of-life or when you find single-pane glass at purchase. Specify low-e coatings and solar heat gain coefficient (SHGC) ≤ 0.25 for south- and west-facing windows in Tulsa — this blocks solar heat gain during summer afternoons without sacrificing winter solar gain. IRA 25C credit: up to $600/yr for windows. Can be done room-by-room as budget allows — prioritize south and west exposures first. Low-e film is a cheaper stopgap (~$1–3/sq ft) if window replacement isn't feasible immediately.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-hi">High</div>
+      <div class="imp-n">10–20% cooling load reduction</div>
+      <div class="imp-s">Drawdown: Improve Windows — 2.10–2.60 Gt/yr globally; most impactful on south/west faces in Tulsa's summer sun</div>
+    </td>
+    <td>
+      <div class="cost-i">Moderate investment</div>
+      <div class="cost-est">$300–800/window installed (residential)</div>
+      <div class="cost-sub">IRA 25C: up to $600/yr for windows.<sup class="fn">2</sup> Can be phased room-by-room. Low-e film ~$1–3/sq ft as interim measure.</div>
+    </td>
+    <td><span class="bt">Comfort</span><span class="bt">Glare ↓</span><span class="bt">UV protection</span><span class="bt">HVAC rightsizing</span></td>
+  </tr>
+
+  <!-- 15. Urban Vegetation -->
+  <tr>
+    <td><div class="pri p15">15</div></td>
+    <td>
+      <div class="sol">Native Trees &amp; Urban Vegetation</div>
+      <div class="sol-sector">Land &amp; Buildings</div>
+      <div class="src-chips">
+        <a class="sc sc-sci" href="https://drawdown.org/explorer/increase-urban-vegetation" target="_blank">Drawdown</a>
+        <a class="sc sc-local" href="https://upwithtrees.org/" target="_blank">Up With Trees (Tulsa)</a>
+        <a class="sc sc-gov" href="https://www.energystar.gov/buildings" target="_blank">EPA ENERGY STAR</a>
+      </div>
+    </td>
+    <td><span class="badge b-buy">◌ When You Buy</span></td>
+    <td>
+      <div class="desc">Strategic shade trees on south and west exposures cut cooling loads 20–30%, sequester carbon, reduce stormwater runoff, and support local biodiversity. Native Oklahoma species require no irrigation once established.</div>
+      <div class="fam-note">Up With Trees (upwithtrees.org) is a Tulsa nonprofit that offers free native tree giveaways and a Tree Selector Tool to find the right species for your yard, sun exposure, and soil type. Native species — chinkapin oak, bur oak, shumard oak, bald cypress — grow into meaningful shade in 5–10 years and live for generations. Planting with a toddler is the right time: the trees you plant now will shade your home during their childhood. A mature oak on the southwest corner of a Tulsa home can eliminate the need for afternoon mechanical cooling on mild days.</div>
+    </td>
+    <td>
+      <div class="imp-tier tier-mod">Moderate + long-term</div>
+      <div class="imp-n">20–30% cooling on shaded faces (mature)</div>
+      <div class="imp-s">Drawdown: Urban Vegetation — carbon sequestration, cooling load reduction, stormwater management, biodiversity</div>
+    </td>
+    <td>
+      <div class="cost-s">Low investment</div>
+      <div class="cost-est">Free–$200 per tree</div>
+      <div class="cost-sub">Up With Trees offers free native tree giveaways. Tulsa utility and urban forestry programs may offer additional rebates. Ongoing: zero cost once established.</div>
+    </td>
+    <td><span class="bt">Passive cooling</span><span class="bt">Carbon sequestration</span><span class="bt">Biodiversity</span><span class="bt">Family activity</span></td>
+  </tr>
+
+  </tbody>
+</table>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:700px;">
+    Recommendations grounded in the same science-based sources as the All Souls Unitarian climate plan. Priorities reflect this household's specific profile: vegan diet (already addressed), 1 gas car as primary remaining lever, daily commute, Tulsa's hot-dominant climate (~40% fossil grid, 220+ sunny days/yr, mild winters), and renter-to-homeowner transition. Global impact figures from Project Drawdown's published data. IRA residential credit figures reflect current law as of early 2026 — verify with a tax professional before contracting. PSO program details subject to change; confirm current offerings at psoklahoma.com.
+
+    <div class="footer-sources">
+      <div class="footer-sources-eyebrow">Sources</div>
+      <div class="footer-sources-list">
+        <span><a href="https://drawdown.org/explorer" target="_blank">Project Drawdown Explorer</a> — science-based climate solutions ranked by impact</span>
+        <span><a href="https://www.ipcc.ch/report/ar6/wg3/" target="_blank">IPCC AR6 WG3</a> — Climate Change 2022: Mitigation of Climate Change</span>
+        <span><a href="https://rmi.org/insight/economics-of-electrifying-buildings-medium-size-commercial-retrofits/" target="_blank">Rocky Mountain Institute</a> — Economics of Electrifying Buildings</span>
+        <span><a href="https://www.energy.gov/eere/buildings/building-technologies-office" target="_blank">DOE Building Technologies Office</a> — building efficiency research &amp; standards</span>
+        <span><a href="https://betterbuildingssolutioncenter.energy.gov/" target="_blank">DOE Better Buildings Solution Center</a> — proven efficiency solutions</span>
+        <span><a href="https://pvwatts.nrel.gov/" target="_blank">NREL PVWatts</a> — solar production estimates for any address in Tulsa</span>
+        <span><a href="https://www.energystar.gov/" target="_blank">EPA ENERGY STAR</a> — certified appliances, water heaters, smart thermostats</span>
+        <span><a href="https://www.aceee.org/" target="_blank">ACEEE</a> — American Council for an Energy-Efficient Economy</span>
+        <span><a href="https://www.fueleconomy.gov/" target="_blank">DOE FuelEconomy.gov</a> — EV range, cost, and emissions comparisons</span>
+        <span><a href="https://flwprotocol.org/" target="_blank">WRI FLW Protocol</a> — food loss and waste measurement framework</span>
+        <span><a href="https://upwithtrees.org/" target="_blank">Up With Trees (Tulsa)</a> — native tree giveaways and Tree Selector Tool</span>
+        <span><a href="https://www.tulsaclimateaction.com/" target="_blank">Tulsa Climate Action Coalition</a> — local climate advocacy and policy tracking</span>
+        <span><a href="https://www.psoklahoma.com/" target="_blank">PSO (Public Service Oklahoma)</a> — green power enrollment, EV rates, smart thermostat rebates</span>
+      </div>
+    </div>
+
+    <div class="footnotes">
+      <h4>Notes</h4>
+      <ol class="fn-list">
+        <li><span class="fn-num">1</span><span>IRA §30D Clean Vehicle Credit: up to $7,500 for new qualifying EVs; $4,000 for used qualifying EVs. Income limits apply ($150K single / $300K joint for new; $75K single / $150K joint for used). Point-of-sale credit available since Jan 2024. Verify vehicle eligibility at fueleconomy.gov/feg/Find.do before purchasing.</span></li>
+        <li><span class="fn-num">2</span><span>IRA §25C Energy Efficient Home Improvement Credit: 30% of costs, annual caps of $2,000 for heat pumps and heat pump water heaters; $1,200 for insulation/air-sealing and windows/doors combined ($600 window sublimit). IRA §25D Residential Clean Energy Credit: 30% of solar PV and solar thermal costs, no annual cap, currently no sunset date as of early 2026. All credits are non-refundable (reduce tax liability to $0 but don't generate a refund). Verify current eligibility requirements with a tax professional before contracting — IRA credits are complex and subject to legislative change.</span></li>
+      </ol>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
